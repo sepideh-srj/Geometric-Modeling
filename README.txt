@@ -1,11 +1,8 @@
-Dear Wallace, 
-
-
-Please load a OBJ file from Prof. Richard webpage first to see the model in canvas.
+Load a OBJ file from Prof. Richard webpage first to see the model in canvas.
 All of the features are implemented. 
 
 Part 1)
-The control options and the mesh display options are also implemented and placed below the canvas.
+The control options and the mesh display options are implemented and placed below the canvas.
 Saving the model with desired name as a OBJ file is also provided.
 
 Part2)
@@ -14,8 +11,3 @@ createWingedEdge function is executed to store the object in winged-edge data st
 renderWingedEdge is also executed which will transform the winged-edge data structure of the object to OBJ and also computes the normals for flat shading and smooth shading in makeNormals function.
 
 
-Part3)
-The program is able to load the horse model in less than 8 seconds. 
-
-Thank you, 
-Sepideh
