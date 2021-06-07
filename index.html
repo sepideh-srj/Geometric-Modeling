@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>WebGL Demo</title>
+    <link rel="stylesheet" href="webgl.css" type="text/css">
+    <!-- <script src="webgl-utils.js"></script> -->
+    <script src="https://webglfundamentals.org/webgl/resources/webgl-utils.js"></script>
+<script src="https://webglfundamentals.org/webgl/resources/webgl-lessons-ui.js"></script>
+<script src="https://webglfundamentals.org/webgl/resources/m4.js"></script>
+  <script src="math.js" type="text/javascript"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gl-matrix/2.8.1/gl-matrix-min.js"
+      integrity="sha512-zhHQR0/H5SEBL3Wn6yYSaTTZej12z0hVZKOv3TwCUXT1z5qeqGcXJLLrbERYRScEDDpYIJhPC1fk31gqR783iQ=="
+      crossorigin="anonymous" defer>
+    </script>
+    <script src="webgl-demo.js" defer></script>
+  </head>
+
+  <body>
+  	<h1> Geometric Modeling Assignment 1 </h1>
+  	<h2> Load a OBJ file from this address: </h2>
+
+	<label for="name">File name:</label> <br>
+    <input type="text" id="filename" value="https://www.cs.sfu.ca/~haoz/teaching/cmpt464/assign/a1/subdivision/chess_piece.obj">
+	
+	<button type="button" onclick="main()">Load the OBJ file</button>
+	<br>
+
+    <canvas id="glcanvas" width="640" height="480"></canvas>
+    <div class="row">
+   	<div class="column">
+    <h2> Control Options </h2>
+	<h4> Slider with rotation on X axis: 
+		<br>
+	<input id="sliderAmount_rotate_X" type="range" min="-10" max="10" step="0.1" value="0" oninput="updateRotate_x(this.value)">
+
+	<p> Slider with rotation on Z axis: </p>
+	<input id="sliderAmount_rotate_Z" type="range" min="-10" max="10" step="0.1" value="0" oninput="updateRotate_z(this.value)">
+
+	<p> Slider with rotation on Y axis: </p>
+	<input id="sliderAmount_rotate_Y" type="range" min="-10" max="10" step="0.1" value="0" oninput="updateRotate_y(this.value)">
+
+	<p> Slider for translation in x axis: </p>
+	<input id="sliderTrans_x" type="range" min="-5" max="5" step="0.1" value="0" oninput="updateTrans_x(this.value)">
+
+	<p> Slider for translation in y axis: </p>
+	<input id="sliderTrans_y" type="range" min="-5" max="5" step="0.1" value="0" oninput="updateTrans_y(this.value)">
+
+	<p> Slider for zoom: </p>
+
+</h4>	<input id="sliderZoom" type="range" min="0" max="6" step="0.1" value="1" oninput="updateZoom(this.value)">
+	<br>
+	<br>
+	</div>
+	<div class="column">
+	<h2> Mesh display Options</h2>
+	<form>
+	<label class="container">
+	  <input type="radio" id="noShading" name="type_shading" value="noShading" onclick="no_shading()" checked>
+	    <span class="checkmark"></span>
+	  <label for="noShading">no shading</label>
+	  </label>
+	<br> <br>
+	<label class="container">
+
+	  <input type="radio" id="flat" name="type_shading" value="flat" onclick="flat_shading()">
+	  	    <span class="checkmark"></span>
+	  <label for="flat">flat shaded</label>
+	</label><br><br>
+		<label class="container">
+
+	  <input type="radio" id="smoothly" name="type_shading" value="smoothly" onclick="smooth_shading()">
+	  	  	    <span class="checkmark"></span>
+
+	  <label for="smoothly">smoothly shaded</label><br><br>
+</label>
+	  	<label class="container">
+
+	  <input type="radio" id="wireframe" name="type_shading" value="wireframe" onclick="wireframe_render()">
+	  <span class="checkmark"></span>
+
+	  <label for="wireframe">wireframe</label><br><br>
+	</label>
+	  	<label class="container">
+
+	  <input type="radio" id="edges" name="type_shading" value="edges" onclick="meshEdges_render()">
+	  	  	    <span class="checkmark"></span>
+
+	  <label for="edges">mesh edges displayed</label><br>
+	</label>
+	  <br>
+	</form>
+	  </div>
+</div>
+	<label for="name">File name:</label> <br>
+    <input type="text" id="filename_save" value="saved_model">
+	
+	<button type="button" onclick="downloadFileFunction()">download the OBJ file</button>
+
+  </body>
+</html>
