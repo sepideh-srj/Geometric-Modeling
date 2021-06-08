@@ -1,4 +1,4 @@
-Load a OBJ file from Prof. Richard webpage first to see the model in canvas.
+Load an OBJ file from Prof. Richard webpage first to see the model in canvas.
 All of the features are implemented. 
 
 Part 1)
